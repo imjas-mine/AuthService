@@ -21,7 +21,6 @@ public class UserInfo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long userId;
-
     private String username;
     private String password;
 
