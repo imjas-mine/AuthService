@@ -2,9 +2,7 @@ package org.example.entities;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,15 +12,18 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="users")
+@Getter
+@Setter
 public class UserInfo {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
     private String username;
     private String password;
+
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
