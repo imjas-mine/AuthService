@@ -32,7 +32,7 @@ public class RefreshTokenService {
     public RefreshToken verifyRefreshToken(RefreshToken token){
         if(token.getExpiryDate().isAfter(Instant.now())){
             refreshTokenRepository.delete(token);
-            throw new RuntimeException(token.getToken()+ "Refresh token expired");
+            throw new RuntimeException(token.getToken()+ "Refresh token expired, Please make a new login");
         }
         return token;
     }
